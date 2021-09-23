@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+/** @format */
+
 import './App.css';
+import Search from './components/Search';
+import Table from './components/Table';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<section>
+			<div className='container mt-5 d-flex flex-column'>
+				<strong>
+					<h1 className='text-light ms-3 mb-5 display-1'>Previsão do Tempo</h1>
+				</strong>
+				<Search />
+				<hr className='bg-light' />
+				<h2 className='text-light ms-3 mb-5 display-1'>Capitais</h2>
+				<Table />
+			</div>
+		</section>
+	);
 }
 
 export default App;
