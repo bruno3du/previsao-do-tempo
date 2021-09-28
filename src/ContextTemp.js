@@ -8,7 +8,7 @@ export default function ContextProvider({ children }) {
 	const [textInput, setTextInput] = useState("");
 	
 	return (
-		<ContextTemp.Provider value={[textInput, setTextInput]}>
+		<ContextTemp.Provider value={{textInput, setTextInput}}>
 			{children}
 		</ContextTemp.Provider>
 	);

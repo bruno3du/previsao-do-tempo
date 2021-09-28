@@ -1,0 +1,26 @@
+/** @format */
+
+#floatingInput {
+	width: 80%;
+	max-width: 480px;
+}
+
+/* @media (min-width: 576px) {
+  .cardData {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .cardData {
+    max-width: 70%;
+  }
+} */
+
+.cardData {
+	max-width: 530px;
+}
+
+.tabela{
+  max-width: 530px;
+}

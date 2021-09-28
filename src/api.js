@@ -2,20 +2,23 @@
 
 const API_BASE = ' https://api.openweathermap.org/data/2.5/';
 
-const weatherFetch = async (endpoint) => {
+export const weatherFetch = async (endpoint) => {
 	const req = await fetch(
 		`${API_BASE}weather?q=${endpoint}&appid=${process.env.REACT_APP_API_KEY}&units=metric&lang=pt_br`
 	);
 	const json = await req.json();
 	return json;
 };
-export const apiWeather = {
-	getApiWeather: async () => {
-		return {
-			item: await weatherFetch(`americana`),
-		};
-	},
 
+export const forecastFetch = async (endpoint) => {
+	const req = await fetch(
+		`${API_BASE}forecast?q=${endpoint}&appid=${process.env.REACT_APP_API_KEY}&units=metric&lang=pt_br`
+	);
+	const json = await req.json();
+	return json;
+};
+
+export const apiWeather = {
 	getCapitalsWeather: async () => {
 		return {
 			rioDeJaneiro: await weatherFetch(`americana`),
