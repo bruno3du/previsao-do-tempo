@@ -13,47 +13,51 @@ export default function CardDatas(props) {
 
 	useEffect(() => {
 		const loadCapitals = async () => {
-			if (textInput) {
-				const weather = await weatherFetch(textInput);
-				const forecast = await forecastFetch(textInput);
-				if (forecast.cod !== '404' || weather.cod !== '404') {
-					setCapitalWeather(weather);
-					const filtredForecast = forecast.list.filter(
-						(item, i) => i % 7 === 0 && i !== 0
-					);
-
-					const dateForecast = filtredForecast.map((item) => {
-						let dayofWeek = '';
-						let date = new Date(item.dt_txt);
-						let dayinNumber = date.getDay();
-
-						if (dayinNumber === 0) {
-							dayofWeek = 'Domingo';
-						} else if (dayinNumber === 1) {
-							dayofWeek = 'Segunda';
-						} else if (dayinNumber === 2) {
-							dayofWeek = 'Terça';
-						} else if (dayinNumber === 3) {
-							dayofWeek = 'Quarta';
-						} else if (dayinNumber === 4) {
-							dayofWeek = 'Quinta';
-						} else if (dayinNumber === 5) {
-							dayofWeek = 'Sexta';
-						} else {
-							dayofWeek = 'Sábado';
-						}
-						return dayofWeek;
-					});
-					const tempForecast = filtredForecast.map((item) => {
-						return [parseInt(item.main.temp_max), parseInt(item.main.temp_min)];
-					});
-
-					setFindForecast({ dayOfWeek: dateForecast, temp: tempForecast });
-				}
-			} else {
+			if (!textInput) {
 				setError(true);
 				setTextInput('');
+				return;
 			}
+			const weather = await weatherFetch(textInput);
+			const forecast = await forecastFetch(textInput);
+			if (forecast.cod === '404' || weather.cod === '404') {
+				setTextInput('');
+				setError(true);
+				return;
+			}
+			setCapitalWeather(weather);
+			const filtredForecast = forecast.list.filter(
+				(item, i) => i % 7 === 0 && i !== 0
+			);
+			setError(false);
+
+			const dateForecast = filtredForecast.map((item) => {
+				let dayofWeek = '';
+				let date = new Date(item.dt_txt);
+				let dayinNumber = date.getDay();
+
+				if (dayinNumber === 0) {
+					dayofWeek = 'Domingo';
+				} else if (dayinNumber === 1) {
+					dayofWeek = 'Segunda';
+				} else if (dayinNumber === 2) {
+					dayofWeek = 'Terça';
+				} else if (dayinNumber === 3) {
+					dayofWeek = 'Quarta';
+				} else if (dayinNumber === 4) {
+					dayofWeek = 'Quinta';
+				} else if (dayinNumber === 5) {
+					dayofWeek = 'Sexta';
+				} else {
+					dayofWeek = 'Sábado';
+				}
+				return dayofWeek;
+			});
+			const tempForecast = filtredForecast.map((item) => {
+				return [parseInt(item.main.temp_max), parseInt(item.main.temp_min)];
+			});
+
+			setFindForecast({ dayOfWeek: dateForecast, temp: tempForecast });
 		};
 		loadCapitals();
 	}, [textInput, setTextInput]);
@@ -139,7 +143,9 @@ export default function CardDatas(props) {
 		</div>
 	) : (
 		<div className='cardData border container-sm bg-light p-3 mb-3 shadow-sm rounded '>
-			{error ? 'Não Encontramos sua cidad e' : 'Carregando...'}
+			{error
+				? 'Não encontramos sua cidade. Por favor tente novamente...'
+				: 'Carregando...'}
 		</div>
 	);
 }
