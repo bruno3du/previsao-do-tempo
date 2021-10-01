@@ -5,6 +5,7 @@ E é por isso que eu decidi fazer um meu próprio. Feito em ReactJS e BootStrap 
 
 Veja você mesmo: https://forecastproject.netlify.app/
 
+<img src="apresentacao%20previsao%20do%20tempo.gif">
 
 ### Feito com:
 
