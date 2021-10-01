@@ -1,6 +1,6 @@
 /** @format */
 
-const API_BASE = ' https://api.openweathermap.org/data/2.5/';
+const API_BASE = 'https://api.openweathermap.org/data/2.5/';
 
 export const weatherFetch = async (endpoint) => {
 	const req = await fetch(
@@ -21,7 +21,7 @@ export const forecastFetch = async (endpoint) => {
 export const apiWeather = {
 	getCapitalsWeather: async () => {
 		return {
-			rioDeJaneiro: await weatherFetch(`americana`),
+			rioDeJaneiro: await weatherFetch(`rio de janeiro`),
 			saoPaulo: await weatherFetch(`sao paulo`),
 			beloHorizonte: await weatherFetch(`belo horizonte`),
 			brasilia: await weatherFetch(`brasilia`),
