@@ -17,10 +17,12 @@ Veja você mesmo: https://forecastproject.netlify.app/
 
 ### Techs e Principais Aprendizagens
 
-Neste projeto eu meu objetivo foi reforçar meu conhecimento no Bootstrap e em consumo de API, fazendo um projeto super bacana para treinar conceitos super util. 
+Neste projeto eu meu objetivo foi reforçar meu conhecimento no Bootstrap e em consumo de API, e para isso um projeto de previsão do tempo fez todo sentido, isso porque ele contem vários dados que deve ser analisado para coletar apenas as que a aplicação necessita. 
 Meu maior desafio neste projeto foi a leitura da documentação, entende-la e traze-la conforme o usuário se sentisse mais satisfeito.
 
-Sempre reforçando os conceitos básicos, tenho percebido mais facilidade no processo.
+O Bootstrap é incrivel como ele facilita o processo, consegui perceber como ele pode encurtar o caminho do desenvolvimento enquanto aprendia a aplicar com a documentação dela mesma.
+
+Sempre reforçando os conceitos basilares, tenho percebido mais facilidade no processo.
 
 ## Author
 
