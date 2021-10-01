@@ -10,13 +10,12 @@ import { useState } from 'react';
 function App() {
 	const [show, setShow] = useState(false);
 
-
 	function closeCard() {
-		setShow(false)
+		setShow(false);
 	}
 
 	function openCard() {
-		setShow(true)
+		setShow(true);
 	}
 
 	return (
@@ -26,7 +25,7 @@ function App() {
 					<h1 className='text-light ms-3 mb-5 d-flex justify-content-sm-center justify-content-start'>
 						<b>Previsão do Tempo</b>
 					</h1>
-					{show && <CardDatas closeCard={closeCard} openCard={openCard}/>}
+					{show && <CardDatas closeCard={closeCard}  />}
 					<Search openCard={openCard} />
 					<hr size='7' className='text-light' />
 					<h2 className='text-light ms-3 mb-5 display-2  d-flex justify-content-sm-center justify-content-start'>

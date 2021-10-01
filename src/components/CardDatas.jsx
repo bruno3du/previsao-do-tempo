@@ -27,7 +27,7 @@ export default function CardDatas(props) {
 			}
 			setCapitalWeather(weather);
 			const filtredForecast = forecast.list.filter(
-				(item, i) => i % 7 === 0 && i !== 0
+				(item, i) => i % 6 === 0 && i !== 0
 			);
 			setError(false);
 

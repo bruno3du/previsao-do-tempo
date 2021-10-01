@@ -19,7 +19,6 @@ export default function Search({ openCard }) {
 					placeholder='Insira o nome da sua cidade'
 					aria-label='Insira o nome da sua cidade'
 					aria-describedby='button-addon'
-					autoFocus={true}
 				/>
 
 				<button
