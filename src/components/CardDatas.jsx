@@ -17,8 +17,6 @@ export default function CardDatas(props) {
 				const weather = await weatherFetch(textInput);
 				const forecast = await forecastFetch(textInput);
 				if (forecast.cod !== '404' || weather.cod !== '404') {
-					
-
 					setCapitalWeather(weather);
 					const filtredForecast = forecast.list.filter(
 						(item, i) => i % 7 === 0 && i !== 0
@@ -46,8 +44,6 @@ export default function CardDatas(props) {
 						}
 						return dayofWeek;
 					});
-					// setError(false);
-
 					const tempForecast = filtredForecast.map((item) => {
 						return [parseInt(item.main.temp_max), parseInt(item.main.temp_min)];
 					});
@@ -55,13 +51,12 @@ export default function CardDatas(props) {
 					setFindForecast({ dayOfWeek: dateForecast, temp: tempForecast });
 				}
 			} else {
-				setError(true)
+				setError(true);
 				setTextInput('');
 			}
 		};
 		loadCapitals();
 	}, [textInput, setTextInput]);
-	
 
 	return capitalWeather ? (
 		<div className='cardData border container-sm bg-light p-3 mb-3 shadow-sm rounded '>
@@ -144,9 +139,7 @@ export default function CardDatas(props) {
 		</div>
 	) : (
 		<div className='cardData border container-sm bg-light p-3 mb-3 shadow-sm rounded '>
-			{error ? "Não Encontramos sua cidad e" : 'Carregando...'}
+			{error ? 'Não Encontramos sua cidad e' : 'Carregando...'}
 		</div>
 	);
 }
-
-

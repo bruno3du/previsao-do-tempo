@@ -17,7 +17,7 @@ export default function Table() {
 		};
 		loadCapitals();
 	}, []);
-	console.log(capitalWeather);
+	
 
 	return capitalWeather ? (
 		<div className="container-sm tabela d-flex justify-content-center">

@@ -2,16 +2,10 @@
 import { useContext, useState } from 'react';
 import { ContextTemp } from '../ContextTemp';
 import '../style.css';
-import { useEffect } from 'react';
 
-export default function Search({openCard}) {
+export default function Search({ openCard }) {
 	const { setTextInput } = useContext(ContextTemp);
 	const [valueField, setValueField] = useState('');
-	console.log(valueField);
-
-	useEffect(() => {
-		// setTextInput(valueField)
-	}, []);
 
 	return (
 		<div className='container-sm d-flex justify-content-center'>
@@ -31,8 +25,8 @@ export default function Search({openCard}) {
 				<button
 					onClick={() => {
 						setTextInput(valueField);
-						setValueField('')
-						openCard()
+						setValueField('');
+						openCard();
 					}}
 					className='btn btn-light'
 					type='button'
